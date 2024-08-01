@@ -1,13 +1,15 @@
 import "./App.css";
-import Button from "./components/Button";
+import TextField from "./lib/components/TextField";
 
 function App() {
   return (
     <>
       <div>
-        <Button size="lg" variant="secondary">
-          Submit
-        </Button>
+        <TextField
+          label="Label"
+          type="outlined"
+          assistiveText="Helper Text"
+        ></TextField>
       </div>
     </>
   );
