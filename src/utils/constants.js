@@ -57,3 +57,19 @@ export const FOLDERS = [
     files: [],
   },
 ];
+
+//Breadcrumb
+export const BREADCRUMB_LINKS = [
+  {
+    name: "Home",
+    link: "#",
+  },
+  {
+    name: "Library",
+    link: "#",
+  },
+  {
+    name: "Breadcrumb",
+    link: "#",
+  },
+];

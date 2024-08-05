@@ -2,13 +2,13 @@
 import "./App.css";
 
 //Components
-import FolderTree from "./lib/components/FolderTree/FolderTree";
+import BreadcrumbGroup from "./lib/components/BreadcrumbGroup/BreadcrumbGroup";
 
 function App() {
   return (
     <>
       <div>
-        <FolderTree></FolderTree>
+        <BreadcrumbGroup></BreadcrumbGroup>
       </div>
     </>
   );
