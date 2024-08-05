@@ -7,7 +7,6 @@ import styled from "styled-components";
 import { BREADCRUMB_LINKS } from "../../../utils/constants";
 
 //Components
-import { MdKeyboardArrowRight } from "react-icons/md";
 
 function BreadcrumbGroup() {
   const [links, setLinks] = React.useState(null);
