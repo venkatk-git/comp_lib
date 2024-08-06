@@ -2,13 +2,13 @@
 import "./App.css";
 
 //Components
-import BreadcrumbGroup from "./lib/components/BreadcrumbGroup/BreadcrumbGroup";
+import Menu from "./lib/components/Menu/Menu";
 
 function App() {
   return (
     <>
       <div>
-        <BreadcrumbGroup></BreadcrumbGroup>
+        <Menu />
       </div>
     </>
   );
