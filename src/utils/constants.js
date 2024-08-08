@@ -73,3 +73,120 @@ export const BREADCRUMB_LINKS = [
     link: "#",
   },
 ];
+
+//Menu
+export const MENUS = [
+  {
+    name: "Undo",
+    shortcut: "Ctrl+Z",
+    menus: [],
+  },
+  {
+    name: "Redo",
+    shortcut: "Ctrl+Y",
+    menus: [],
+  },
+  {
+    name: "Cut",
+    shortcut: "Ctrl+X",
+    menus: [],
+  },
+  {
+    name: "Copy",
+    shortcut: "Ctrl+C",
+    menus: [],
+  },
+  {
+    name: "Find",
+    shortcut: "Ctrl+F",
+    menus: [],
+  },
+  {
+    name: "Replace",
+    shortcut: "Ctrl+H",
+    menus: [],
+  },
+  {
+    name: "Preferences",
+    menus: [
+      {
+        name: "Profile",
+        menus: [
+          {
+            name: "Default",
+            menus: [],
+          },
+          {
+            name: "New Profile",
+            menus: [],
+          },
+          {
+            name: "Export Profile",
+            menus: [],
+          },
+          {
+            name: "Import Profile",
+            menus: [
+              {
+                name: "Undo",
+                shortcut: "Ctrl+Z",
+                menus: [],
+              },
+              {
+                name: "Redo",
+                shortcut: "Ctrl+Y",
+                menus: [],
+              },
+              {
+                name: "Cut",
+                shortcut: "Ctrl+X",
+                menus: [],
+              },
+              {
+                name: "Copy",
+                shortcut: "Ctrl+C",
+                menus: [],
+              },
+              {
+                name: "Find",
+                shortcut: "Ctrl+F",
+                menus: [],
+              },
+              {
+                name: "Replace",
+                shortcut: "Ctrl+H",
+                menus: [],
+              },
+              {
+                name: "Preferences",
+                menus: [
+                  {
+                    name: "Profile",
+                    menus: [
+                      {
+                        name: "Default",
+                        menus: [],
+                      },
+                      {
+                        name: "New Profile",
+                        menus: [],
+                      },
+                      {
+                        name: "Export Profile",
+                        menus: [],
+                      },
+                      {
+                        name: "Import Profile",
+                        menus: [],
+                      },
+                    ],
+                  },
+                ],
+              },
+            ],
+          },
+        ],
+      },
+    ],
+  },
+];

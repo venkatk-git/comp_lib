@@ -6,93 +6,43 @@ import { MdKeyboardArrowRight } from "react-icons/md";
 
 //Helpers & Constants
 
-function Menu() {
-  const [toggle, setToggle] = React.useState(false);
+function Menu({ menus }) {
+  const [toggle, setToggle] = React.useState(true);
 
   const handleToggle = () => {
     setToggle((prev) => !prev);
   };
 
-  const MENU = [
-    {
-      name: "Undo",
-      shortcut: "Ctrl+Z",
-      menus: [],
-    },
-    {
-      name: "Redo",
-      shortcut: "Ctrl+Y",
-      menus: [],
-    },
-    {
-      name: "Cut",
-      shortcut: "Ctrl+X",
-      menus: [],
-    },
-    {
-      name: "Copy",
-      shortcut: "Ctrl+C",
-      menus: [],
-    },
-    {
-      name: "Find",
-      shortcut: "Ctrl+F",
-      menus: [],
-    },
-    {
-      name: "Replace",
-      shortcut: "Ctrl+H",
-      menus: [],
-    },
-    {
-      name: "Preferences",
-      menus: [
-        {
-          name: "Profile",
-          menus: [
-            {
-              name: "Default",
-              menus: [],
-            },
-            {
-              name: "New Profile",
-              menus: [],
-            },
-            {
-              name: "Export Profile",
-              menus: [],
-            },
-            {
-              name: "Import Profile",
-              menus: [],
-            },
-          ],
-        },
-      ],
-    },
-  ];
-
   return (
     <MenuWrapper>
-      <MenuButton handleToggle={handleToggle} />
       <Wrapper show={toggle}>
-        {toggle && MENU?.map((menu) => <SMenu menu={menu} />)}
+        {menus?.map((menu) => (
+          <SMenu menu={menu} />
+        ))}
       </Wrapper>
     </MenuWrapper>
   );
 }
 
-function MenuButton({ handleToggle }) {
-  return <MenuButtonWrapper onClick={handleToggle}>Edit</MenuButtonWrapper>;
-}
-
 function SMenu({ menu }) {
+  const [nestedMenu, setNestedMenu] = React.useState(false);
+  function handleNestedMenu(menu) {
+    if (menu?.menus.length > 0) setNestedMenu((prev) => !prev);
+  }
+
   return (
-    <SMenuWrapper>
-      <SMenuList>{menu.name}</SMenuList>
-      <SMenuList>{menu.shortcut}</SMenuList>
-      <Arrow show={menu.menus.length > 0} />
-    </SMenuWrapper>
+    <>
+      <SWrapper>
+        <SMenuWrapper onClick={() => handleNestedMenu(menu)}>
+          <SMenuList>{menu.name}</SMenuList>
+          <SMenuList>{menu.shortcut}</SMenuList>
+          <Arrow show={menu.menus.length > 0} />
+        </SMenuWrapper>
+        <NestedMenuWrapper>
+          {nestedMenu && <Menu menus={menu.menus} />}
+        </NestedMenuWrapper>
+      </SWrapper>
+    </>
   );
 }
 
@@ -126,6 +76,10 @@ const Wrapper = styled.div`
   padding: 8px;
 `;
 
+const SWrapper = styled.div`
+  position: relative;
+`;
+
 const SMenuWrapper = styled.ul`
   margin: unset;
   width: 186px;
@@ -146,6 +100,12 @@ const SMenuWrapper = styled.ul`
 
 const SMenuList = styled.li`
   list-style: none;
+`;
+
+const NestedMenuWrapper = styled.div`
+  position: absolute;
+  top: 0;
+  left: 101%;
 `;
 
 export default Menu;
