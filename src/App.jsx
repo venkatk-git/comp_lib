@@ -1,22 +1,25 @@
 //Stylesheet
 import "./App.css";
+import styled from "styled-components";
 
 //Components
-import Menu from "./lib/components/Menu/Menu";
-import FolderTree from "./lib/components/FolderTree";
-import Accordion from "./lib/components/Accordion";
+import SimpleSearch from "./lib/components/SimpleSearch";
 
 //Helpers & Constans
-import { MENUS, values } from "./utils/constants";
 
 function App() {
   return (
-    <>
-      <div>
-        <Menu menus={MENUS} />
-      </div>
-    </>
+    <Wrapper>
+      <SimpleSearch />
+    </Wrapper>
   );
 }
+
+const Wrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items; center;
+  width: 100%;
+`;
 
 export default App;

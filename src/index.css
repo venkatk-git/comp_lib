@@ -5,11 +5,12 @@
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  background-color: hsl(216, 19%, 5%);
+  --bg-color: hsl(216, 19%, 5%);
   --hover-dark: #f9f9f9e5;
   --border-color: hsl(220, 10%, 30%);
 
   --white: hsl(0, 0%, 87%);
+  --black: hsl(0, 0%, 15%);
 
   --gray-100: hsl(240, 1%, 44%);
   --gray-400: hsl(0, 0%, 81%);
@@ -26,11 +27,17 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-body {
+body,
+html {
   margin: 0;
   display: flex;
-  min-width: 320px;
-  min-height: 100vh;
+  width: 100%;
+  height: 100%;
+}
+
+#root {
+  width: 100%;
+  height: 100%;
 }
 
 @media (prefers-color-scheme: light) {
