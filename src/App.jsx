@@ -3,14 +3,14 @@ import "./App.css";
 import styled from "styled-components";
 
 //Components
-import SimpleSearch from "./lib/components/SimpleSearch";
+import YTSearch from "./lib/components/YTSearch";
 
 //Helpers & Constans
 
 function App() {
   return (
     <Wrapper>
-      <SimpleSearch />
+      <YTSearch />
     </Wrapper>
   );
 }
